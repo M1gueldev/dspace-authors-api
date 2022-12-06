@@ -31,10 +31,12 @@ export const ReadAllHandler = (_: Request, res: Response) => {
 }
 
 export const ReadHandler: RequestHandler = (req, res) => {
-   const id = req.body.id
+   const id = parseInt(req.query.id)
+   console.log(id);
    if (
-       !id || typeof(id) !== "number"
+       !id 
    ) {
+      console.log(typeof(id), !id, id)
       res.status(400).send(error400)
    } else {
       Read(id).then(d => {
