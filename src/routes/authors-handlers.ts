@@ -35,7 +35,7 @@ export const ReadAllHandler = (_: Request, res: Response) => {
 }
 
 export const ReadHandler: RequestHandler = (req, res) => {
-   const id = parseInt(req.query.id)
+   const id = parseInt(req.query.id.toString())
    console.log(id);
    if (
        !id 
@@ -75,7 +75,7 @@ export const UpdateHandler: RequestHandler = (req, res) => {
    }
 }
 export const DeleteHandler: RequestHandler = (req, res) => {
-   const id = parseInt(req.query.id)
+   const id = parseInt(req.query.id.toString())
    if (
        !id || typeof(id) !== "number"
    ) {
