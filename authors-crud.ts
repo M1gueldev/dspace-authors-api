@@ -5,6 +5,7 @@ export const prisma = new PrismaClient()
 
 export function Create(author: Author) {
     delete author['id'];
+    console.log('Creating Author: ', author)
     return prisma.author.create({
         data: author
     })

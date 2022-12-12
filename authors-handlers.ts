@@ -79,7 +79,6 @@ export const DeleteHandler: RequestHandler = (req, res) => {
    if (
        !id || typeof(id) !== "number"
    ) {
-      console.log(id, typeof(id))
       res.status(400).send(error400)
    } else {
       Delete(id).then(d => {
